@@ -1,6 +1,7 @@
 __Author__="Kaio Fábio Prates"
 import os
 import time
+from tqdm import tqdm
 #colors
 neg = '\033[1m';cl= '\033[0;0m';red= '\033[31m';green = '\033[32m'
 blue = '\033[34m';cian = '\033[36m';mag = '\033[35m'
@@ -14,9 +15,12 @@ def photo(x,c):
     if (c == 'y' or c == "Y"):
         os.system("termux-vibrate -d 300 -f")
     print(neg+"SUCESS"+cl)
+
 #number of photos
 def tempo(y,x,c):
-    for i in range(y):
+    a = range(y)
+    #for i in range(y):
+    for i in tqdm(a):
         photo(x,c)
 tela = " ____                              \n/\\  _`\\                            \n\\ \\,\\L\\_\\       _____    __  __    \n \\/_\\__ \\      /\\ '__`\\ /\\ \\/\\ \\   \n   /\\ \\L\\ \\  __\\ \\ \\L\\ \\\\ \\ \\_\\ \\  \n   \\ `\\____\\/\\_\\\\ \\ ,__/ \\/`____ \\ \n    \\/_____/\\/_/ \\ \\ \\/   `/___/> \\\n                  \\ \\_\\      /\\___/\n                   \\/_/      \\/__/ \n"
 print(cian+neg+tela+cl)
